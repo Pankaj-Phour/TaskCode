@@ -1,0 +1,17 @@
+<div class="body">
+    <div class="container">
+        <div class="list" *ngFor="let data of bottom;let i = index">
+          <div class="buttomCircle">
+            <div class="circle" [ngStyle]="{'background-color': i+1 < userData.isPending ? 'green' : i+1 === userData.isPending ? 'yellow' : 'red'}">
+                {{data.name}}
+              </div>
+              <div class="textName">
+                {{i+1 < userData.isPending ? 'Approved' : i+1 === userData.isPending ? 'In Progress' : 'Pending'}}
+              </div>
+          </div>
+            <div class="image">
+                <img *ngIf="i<4" src="https://cdn-icons-png.flaticon.com/512/109/109617.png" height="40" width="40">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="body">
+    <div class="container">
+        <div class="navbar">
+            <div class="nav-item">
+                Registration Details
+            </div>
+            <div class="nav-item">
+                Personal details
+            </div>
+            <div class="nav-item">
+                Status : <span [ngStyle]="{'color':userData ? 'green' : 'yellow','font-size': '20px'}">{{userData ? 'Activated' : 'Not Activated'}}</span>
+            </div>
+        </div>
+    </div>
+</div>

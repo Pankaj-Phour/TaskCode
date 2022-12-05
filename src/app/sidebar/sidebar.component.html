@@ -1,0 +1,7 @@
+<div class="body">
+    <div class="container">
+        <div *ngFor="let item of sidebar;let i = index" [ngClass]="i<1 ? 'selected' : 'data'">
+            {{item.name}}
+        </div>
+    </div>
+</div>
