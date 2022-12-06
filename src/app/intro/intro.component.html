@@ -1,0 +1,53 @@
+<div class="body">
+    <div class="container" *ngIf="!afterSubmit">
+            <form [formGroup]="userForm">
+                <div class="formGroup">
+                    <label for="First Name">First Name</label>
+                    <input type="text" placeholder="Enter your first name" formControlName="firstName">
+                    <div class="error" *ngIf="userForm.get('firstName').hasError('required') && Submit">First Name is required</div>
+                </div>
+                <div class="formGroup">
+                    <label for="Middle Name">Middle Name</label>
+                    <input type="text" placeholder="Enter your middle name" formControlName="middleName">
+                    <div class="error" *ngIf="userForm.get('middleName').hasError('required') && Submit">Middle Name is required</div>
+                </div>
+                <div class="formGroup">
+                    <label for="Last Name">Last Name</label>
+                    <input type="text" placeholder="Enter your last name" formControlName="lastName">
+                    <div class="error" *ngIf="userForm.get('lastName').hasError('required') && Submit">Last Name is required</div>
+                </div>
+                <div class="formGroup">
+                    <label for="Father Name">Father Name</label>
+                    <input type="text" placeholder="Enter your father name" formControlName="fatherName">
+                    <div class="error" *ngIf="userForm.get('fatherName').hasError('required') && Submit">Father Name is required</div>
+                </div>
+                <div class="formGroup">
+                    <label for="Email">Email</label>
+                    <input type="email" placeholder="Enter your email id" formControlName="email">
+                    <div class="error" *ngIf="userForm.get('email').hasError('required') && Submit">Email is required</div>
+                    <div class="error" *ngIf="userForm.get('email').hasError('email') && Submit">Please enter valid email id.</div>
+                </div>
+                <div class="formGroup">
+                    <label for="Date of Birth">Date of Birth</label>
+                    <input type="date" formControlName="birthDate">
+                    <div class="error" *ngIf="userForm.get('birthDate').hasError('required') && Submit">Date of Birth is required</div>
+                </div>
+                <div class="formGroup">
+                    <label for="Photo">Photo</label>
+                    <input type="file" placeholder="Enter your name" formControlName="photo">
+                    <div class="error" *ngIf="userForm.get('photo').hasError('required') && Submit">Profile photo is required</div>
+                </div>
+                <div class="buttonGroup">
+                    <button (click)="submit()">Submit</button>
+                </div>
+            </form>
+    </div>
+
+    <div class="afterSubmit" *ngIf="afterSubmit">
+        <div class="heading">Thank You for your response.</div>
+        <div class="heading2">To modify the details please click the button below.</div>
+        <div class="button">
+            <button (click)="reload()">Modify Details</button>
+        </div>
+    </div>
+</div>
