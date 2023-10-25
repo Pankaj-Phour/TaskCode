@@ -36,7 +36,12 @@
             </div>
             <div class="tile status">{{user.status}}</div>
             <div class="tile role">{{user.role}}</div>
-            <div class="tile email">{{user.email}}</div>
+            <div class="tile email">
+                <div class="outer">
+                    <div class="inner" [ngStyle]="{width:user.email + 'px'}"></div>
+                </div>
+                <span>{{user.email + '%'}}</span>
+            </div>
             <div class="tile teams">
                 <div class="teamnames" *ngFor="let team of user.teams">
                     {{team}}

@@ -61,6 +61,25 @@
                         font-size: 14px;
                     }
                 }
+                .email{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    column-gap: 5px;
+                    .outer{
+                        height: 10px;
+                        width: 100px;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 20px;
+                        background-color: rgb(198, 174, 212);
+                        .inner{
+                            border-radius: 20px;
+                            height: 100%;
+                            background-color: rgb(148, 18, 199);
+                        }
+                    }
+                }
                 .teams{
                     display: flex;
                     column-gap: 5px;
