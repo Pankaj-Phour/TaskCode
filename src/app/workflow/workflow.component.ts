@@ -7,28 +7,18 @@ import { ApiService } from '../api.service';
   styleUrls: ['./workflow.component.scss']
 })
 export class WorkflowComponent implements OnInit {
-  bottom:any =[
-    {name:'A'},
-    {name:'B'},
-    {name:'C'},
-    {name:'D'},
-    {name:'E'},
-  ];
-  userData:any ={
-    firstName:'john',
-    middleName:'wick',
-    lastName:'smith',
-    email:'john.smith@gmail.com',
-    fatherName:'Mark ruffalo',
-    dateOfBirth:'1990-01-01',
-    isPending:3
-  }
+
+
+  users:any = [
+    {checked:'',firstname:'Pankaj',lastname:'Phour',status:'active',email:70,role:'Frontend developer',teams:['Angular','Frontend','developers'],options:['edit','delete']}
+  ]
   constructor(private api:ApiService) { }
   ngOnInit(): void {
-    this.api.formDataEvent.subscribe((data:any)=>{
-        console.log(data);
-        this.userData = data;
-    })
+    for(let i=1;i<100;i++){
+      this.users.push(this.users[0])
+    }
+    console.log(this.users);
+    
   }
 
 

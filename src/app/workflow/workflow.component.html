@@ -1,17 +1,50 @@
 <div class="body">
-    <div class="container">
-        <div class="list" *ngFor="let data of bottom;let i = index">
-          <div class="buttomCircle">
-            <div class="circle" [ngStyle]="{'background-color': i+1 < userData.isPending ? 'green' : i+1 === userData.isPending ? 'yellow' : 'red'}">
-                {{data.name}}
-              </div>
-              <div class="textName">
-                {{i+1 < userData.isPending ? 'Approved' : i+1 === userData.isPending ? 'In Progress' : 'Pending'}}
-              </div>
-          </div>
-            <div class="image">
-                <img *ngIf="i<4" src="https://cdn-icons-png.flaticon.com/512/109/109617.png" height="40" width="40">
-            </div>
+  <div class="top"></div>
+  <div class="bottom">
+    <div class="content">
+      <div class="header">
+          <div class="tile checkbox">
+            <input type="checkbox">
+
         </div>
+        <div class="tile profile">Name</div>
+        <div class="tile status">Status</div>
+        <div class="tile role">Role</div>
+        <div class="tile email">Email address</div>
+        <div class="tile teams">Teams</div>
+        <div class="tile options" style="visibility: hidden;">options</div>
+      </div>
+      <ng-container *ngFor="let user of users;let i = index">
+      <div class="user" *ngIf="i<10">
+
+            <div class="tile checkbox">
+                <input type="checkbox">
+            </div>
+            <div class="tile profile">
+                <div class="logo">
+                    {{user.firstname.split('')[0]}}
+                </div>
+                <div class="details">
+                    <div class="firstname">
+                        {{user.firstname}}
+                    </div>
+                    <div class="lastname">
+                        {{user.firstname}}
+                    </div>
+                </div>
+
+            </div>
+            <div class="tile status">{{user.status}}</div>
+            <div class="tile role">{{user.role}}</div>
+            <div class="tile email">{{user.email}}</div>
+            <div class="tile teams">
+                <div class="teamnames" *ngFor="let team of user.teams">
+                    {{team}}
+                </div>
+            </div>
+            <div class="tile options">{{user.options[0]}}</div>
+        </div>
+    </ng-container>
     </div>
+  </div>
 </div>

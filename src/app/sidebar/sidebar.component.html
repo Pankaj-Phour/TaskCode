@@ -1,7 +1,9 @@
 <div class="body">
-    <div class="container">
-        <div *ngFor="let item of sidebar;let i = index" [ngClass]="i<1 ? 'selected' : 'data'">
-            {{item.name}}
-        </div>
+    <div class="navItems">
+        <img class="item" *ngFor="let item of topItems" [src]="item.name">
+    </div>
+    <div class="navItems">
+        <img class="item" *ngFor="let item of bottomItems" [src]="item.name">
+
     </div>
 </div>
