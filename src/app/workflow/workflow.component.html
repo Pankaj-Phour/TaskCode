@@ -1,55 +1,87 @@
 <div class="body">
-  <div class="top"></div>
-  <div class="bottom">
-    <div class="content">
-      <div class="header">
-          <div class="tile checkbox">
-            <input type="checkbox">
-
-        </div>
-        <div class="tile profile">Name</div>
-        <div class="tile status">Status</div>
-        <div class="tile role">Role</div>
-        <div class="tile email">Email address</div>
-        <div class="tile teams">Teams</div>
-        <div class="tile options" style="visibility: hidden;">options</div>
-      </div>
-      <ng-container *ngFor="let user of users;let i = index">
-      <div class="user" *ngIf="i<10">
-
-            <div class="tile checkbox">
-                <input type="checkbox">
-            </div>
-            <div class="tile profile">
-                <div class="logo">
-                    {{user.firstname.split('')[0]}}
-                </div>
-                <div class="details">
-                    <div class="firstname">
-                        {{user.firstname}}
-                    </div>
-                    <div class="lastname">
-                        {{user.firstname}}
-                    </div>
-                </div>
-
-            </div>
-            <div class="tile status">{{user.status}}</div>
-            <div class="tile role">{{user.role}}</div>
-            <div class="tile email">
-                <div class="outer">
-                    <div class="inner" [ngStyle]="{width:user.email + 'px'}"></div>
-                </div>
-                <span>{{user.email + '%'}}</span>
-            </div>
-            <div class="tile teams">
-                <div class="teamnames" *ngFor="let team of user.teams">
-                    {{team}}
-                </div>
-            </div>
-            <div class="tile options">{{user.options[0]}}</div>
-        </div>
-    </ng-container>
+  <div class="top">
+    <div class="left">
+        <div class="heading">Team members</div>
+        <div class="count">{{users.length + ' users'}}</div>
     </div>
+    <div class="right">
+        <img src="https://static.thenounproject.com/png/4572884-200.png">
+    </div>
+  </div>
+  <div class="bottom">
+    <table class="content">
+      <thead class="header">
+        <tr>
+
+            <th class="tile checkbox">
+                <input type="checkbox">
+                
+            </th>
+            <th class="tile profile">Name</th>
+        <th class="tile status">Status</th>
+        <th class="tile role">Role</th>
+        <th class="tile email">Email address</th>
+        <th class="tile teams">Teams</th>
+        <th class="tile options"></th>
+    </tr>
+    </thead>
+    <tbody>
+        
+        <ng-container *ngFor="let user of users;let i = index">
+            <tr class="user" *ngIf="i<20">
+                
+                <td class="tile checkbox">
+                    <input type="checkbox">
+                </td>
+            <td class="tile">
+                <div class="profile">
+
+                    <div class="logo">
+                        {{user.name.split('')[0]}}
+                    </div>
+                    <div class="details">
+                        <div class="firstname">
+                            {{user.name}}
+                        </div>
+                        <div class="lastname">
+                            {{user.userId}}
+                        </div>
+                    </div>
+                </div>
+                
+            </td>
+            <td class="tile">
+                <div class="status">
+
+                    {{user.status}}
+                </div>
+            </td>
+            <td class="tile role">{{user.role}}</td>
+            <td class="tile">
+                <div class="email">
+
+                    <div class="outer">
+                        <div class="inner" [ngStyle]="{width:user.email + 'px'}"></div>
+                    </div>
+                    <span>{{user.email + '%'}}</span>
+                </div>
+            </td>
+            <td class="tile">
+                <div class="teams">
+
+                    <div class="teamnames" *ngFor="let team of user.teams">
+                        {{team}}
+                    </div>
+                </div>
+            </td>
+            <td class="tile">
+                <div class="icons">
+                    <img [src]="icons[j]" alt="" *ngFor="let icon of user.options;let j = index;">
+                </div>
+            </td>
+        </tr>
+    </ng-container>
+</tbody>
+</table>
   </div>
 </div>
