@@ -1,16 +1,94 @@
-<div class="body mainDiv">
-    <div class="nav">
-        <app-navbar></app-navbar>
-    </div>
-    <div class="top">
-    <div class="left">
-        <app-sidebar></app-sidebar>
-    </div>
-    <div class="right">
-        <app-intro></app-intro>
-    </div>
-    </div>
-    <div class="bottom">
-        <app-workflow></app-workflow>
-    </div>
+<div class="body">
+        <div class="sidebar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="right">
+            <div class="top">
+                <div class="header">
+                    <div class="leftHeading">Welcome back, Olivia</div>
+                    <div class="rightButtons">
+                        <div class="search">
+                            <img src="https://www.iconpacks.net/icons/2/free-search-icon-2903-thumb.png">
+                        </div>
+                        <button class="topbutton">
+                            <img src="https://icons-for-free.com/iconfiles/png/512/customize+levels+settings+icon-1320085880730884001.png">
+                            <span>
+                                Customize
+                            </span>
+                        </button>
+                        <button class="topbutton">
+                            <img src="https://cdn.icon-icons.com/icons2/2348/PNG/512/export_icon_143019.png">
+                            <span>
+                                Export
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="barChart">
+                        <div class="barTop">
+                            <div class="barLeft">
+                                <div class="logo">
+                                    <img src="https://static.thenounproject.com/png/589613-200.png">
+                                </div>
+                                <div class="text">
+                                    <div class="heading">Vendors Breakdown</div>
+                                    <div class="para">Keep track of vendors and their security ratings.</div>
+                                </div>
+
+                            </div>
+                            <div class="barRight">
+                                <img src="https://static.thenounproject.com/png/4572884-200.png">
+                            </div>
+                        </div>
+                        <div class="barCenter">
+                            <app-bar-chart></app-bar-chart>
+                        </div>
+                        <div class="barBottom">
+                            <div class="barButton">
+                                <button>View full report</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="donutChart">
+                        <div class="donutTop">
+                            <div class="donutLeft">
+                                    <div class="heading">Vendors Breakdown</div>
+                                    <div class="para">Keep track of vendors and their security ratings.</div>
+                            </div>
+                            <div class="donutRight">
+                                <img src="https://static.thenounproject.com/png/4572884-200.png">
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <div class="leftCenter">
+
+                                <app-donut-chart></app-donut-chart>
+                            </div>
+                            <div class="rightCenter">
+                                <img src="https://cdn-icons-png.flaticon.com/512/3550/3550112.png" alt="">
+                                <div class="data">10%</div>
+                            </div>
+                        </div>
+                        <div class="donutBottom">
+                            <div class="topText">
+                                <div class="heading">You've almost reached your limit</div>
+                                <div class="text">You have used 80% of your available spots. Upgrade plan to monitor more vendors.</div>
+                            </div>
+                            <div class="bottomButton">
+                                <button>
+                                    <div class="logo">
+                                        <img src="https://www.freeiconspng.com/thumbs/electricity-icon-png/lightning-icon-png--5.png">
+                                    </div>
+                                    <div class="text">Upgrade plan</div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="workflow">
+<app-workflow></app-workflow>
+            </div>
+        </div>
 </div>

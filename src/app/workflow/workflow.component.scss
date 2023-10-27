@@ -1,52 +1,234 @@
+@import '../../vars';
 .body{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 30vh;
-}
-.container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
     max-width: 100%;
     width: 100%;
-    max-height: 100%;
-    height: 100%;
-    column-gap: 20px;
-}
-.list{
-    max-width: 100%;
-    width: 15%;
-    max-height: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    font-family: 'Roboto';
+    box-sizing: border-box;
+    .top{
+        max-width: 100%;
+        width: 100%;
+        max-height: 70px;
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        .left{
+            display: flex;
+            column-gap: 5px;
+            .heading{
+                font-size: 24px;
+                font-weight: 500;
+            }
+            .count{
+                border-radius: 20px;
+                background-color: $lightPurple;
+                padding: 5px;
+                padding-inline: 8px;
+                color: $darkPurple;
+            }
+        }
+        .right{
+            img{
+                height: 20px;
+                width: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+    .bottom{
+        max-width: 100%;
+        width: 100%;
+        max-height: 100%;
+        height: 90%;
+        .content{
+         
+            width: 100%;
+            height: 100%;
+            // display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .header,.user{
+                // display: flex;
+                justify-content: space-between;
+                align-items: center;
+                // width: 100%;
+                padding: 5px;
+                box-sizing: border-box;
+                .tile{
+                    text-align: left;
+                    input{
+                        cursor: pointer;
+                    }
+                }
+            }
+            .user{
+                border-bottom: 1px solid gray;
+                .profile{
+                    display: flex;
+                    column-gap: 10px;
+                    .logo{
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        background-color: orange;
+                        align-items: center;
+                        color: white;
+                        font-weight: 500;
+                        font-size: 21px;
+                    }
+                    .firstname{
+                        font-size: 16px;
+                    }
+                    .lastname{
+                        font-size: 14px;
+                    }
+                }
+                .email{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 5px;
+                    .outer{
+                        height: 10px;
+                        width: 100px;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 20px;
+                        background-color: $lightPurple;
+                        .inner{
+                            border-radius: 20px;
+                            height: 100%;
+                            background-color: $darkPurple;
+                        }
+                    }
+                }
+                .teams{
+                    display: flex;
+                    column-gap: 5px;
+                }
+                .teamnames{
+                    border-radius: 30px;
+                    padding: 5px;
+                    padding-inline: 10px;
+                    background-color: $lightPurple;
+                    color: $darkPurple;
+                    &:nth-child(2){
+                        background-color: $lightAqua;
+                        color: $darkAqua;
+                    }
+                    &:nth-child(3){
+                        background-color: $lightBlue;
+                        color: $darkBlue;
+                    }
+                }
+                .icons{
+                    display: flex;
+                    column-gap: 15px;
+                    img{
+                        height: 20px;
+                        width: 20px;
+                        cursor: pointer;
+                    }
+                }
+                .status{
+                    background-color: $lightGreen;
+                    color: $darkGreen;
+                    border-radius: 20px;
+                    padding: 5px 10px;
+                    width: fit-content;
+                }
+                .activeStatus{
+                    background-color: $lightGreen;
+                    color: $darkGreen;
+                }
+                .inactive{
+                    background-color: $lightGray;
+                    color: $darkGray;
+                }
+            }
+        }
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            .center{
+                display: flex;
+                .pages{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    column-gap: 5px;
+                    .page{
+                        border-radius: 10px;
+                        border: 1px solid $darkPurple;
+                        padding: 10px;
+                        padding-inline: 20px;
+                        cursor: pointer;
+                        color: $darkPurple;
+                        background-color: transparent;
+                    }
+                    .selected{
+                        background-color: $darkPurple;
+                        color: $whiteColor;
+                        border: 1px solid $whiteColor;
+                    }
+                }
+            }
+            .right{
+                display: flex;
+                align-items: center;
+                column-gap: 20px;
+            }
+            button{
+                padding: 10px 20px;
+                border-radius: 10px;
+                border: 1px solid $darkGray;
+                outline: none;
+                // background-color: transparent;
+                display: flex;
+                justify-content: space-around;
+                column-gap: 10px;
+                align-items: center;
+                cursor: pointer;
+                img{
+                    width: 20px;
+                    height: auto;
+                }
+            }
+            button:disabled{
+                background-color: transparent;
+                
+            }
+            button:enabled{
+                color: $whiteColor;
+                background-color: $darkPurple;
+            }
+            button:hover{
+                // background-color: $darkPurple;
+                // color: $whiteColor;
+            }
+        }
+    }
 }
-.circle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width:120px;
-    width: 100%;
-    height: 70px;
-    border-radius: 50%;
-    font-size: 25px;
-    border: 2px solid gray;
-    cursor: pointer;
-}
-.buttomCircle {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  row-gap: 10px;
-}
-.textName {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 120px;
-  width: 100%;
+
+table{
+    border-collapse: collapse;
+    tr{
+        border: 1px solid gray;
+        td,th{
+            padding: 5px;
+        }
+        th{
+            background-color: $lightGray;
+            padding: 10px;
+        }
+    }
+
 }

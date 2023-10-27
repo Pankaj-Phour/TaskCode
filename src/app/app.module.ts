@@ -9,6 +9,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
 import { WorkflowComponent } from './workflow/workflow.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { DonutChartComponent } from './donut-chart/donut-chart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     SidebarComponent,
     MainComponent,
     WorkflowComponent,
-    NavbarComponent
+    NavbarComponent,
+    BarChartComponent,
+    DonutChartComponent
   ],
   imports: [
     BrowserModule,
