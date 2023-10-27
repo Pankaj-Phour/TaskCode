@@ -158,12 +158,40 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px;
+            .center{
+                display: flex;
+                .pages{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    column-gap: 5px;
+                    .page{
+                        border-radius: 10px;
+                        border: 1px solid $darkPurple;
+                        padding: 10px;
+                        padding-inline: 20px;
+                        cursor: pointer;
+                        color: $darkPurple;
+                        background-color: transparent;
+                    }
+                    .selected{
+                        background-color: $darkPurple;
+                        color: $whiteColor;
+                        border: 1px solid $whiteColor;
+                    }
+                }
+            }
+            .right{
+                display: flex;
+                align-items: center;
+                column-gap: 20px;
+            }
             button{
                 padding: 10px 20px;
                 border-radius: 10px;
                 border: 1px solid $darkGray;
                 outline: none;
-                background-color: transparent;
+                // background-color: transparent;
                 display: flex;
                 justify-content: space-around;
                 column-gap: 10px;
@@ -173,6 +201,14 @@
                     width: 20px;
                     height: auto;
                 }
+            }
+            button:disabled{
+                background-color: transparent;
+                
+            }
+            button:enabled{
+                color: $whiteColor;
+                background-color: $darkPurple;
             }
             button:hover{
                 // background-color: $darkPurple;
@@ -186,10 +222,11 @@ table{
     border-collapse: collapse;
     tr{
         border: 1px solid gray;
+        td,th{
+            padding: 5px;
+        }
         th{
             background-color: $lightGray;
-        }
-        td,th{
             padding: 10px;
         }
     }

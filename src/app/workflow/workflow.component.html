@@ -28,7 +28,7 @@
     <tbody>
         
         <ng-container *ngFor="let user of users;let i = index">
-            <tr class="user" *ngIf="i/10<currentSlide && i/10>(currentSlide-1)">
+            <tr class="user" *ngIf="i/10<currentSlide && i/10>=(currentSlide-1)">
                 <td class="tile checkbox">
                     <input type="checkbox" [checked]="user.checked" (click)="toggleSingle(i)">
                 </td>
@@ -84,15 +84,26 @@
 <div class="footer">
     <div class="left">
         <button [disabled]="currentSlide<2" (click)="changeSlide('previous')">
-            <img src="https://cdn-icons-png.flaticon.com/512/109/109618.png">
+            <img [src]="currentSlide<2 ? 'https://cdn-icons-png.flaticon.com/512/109/109618.png' : 'https://flaticons.net/icon.php?slug_category=mobile-application&slug_icon=left-arrow'">
            <span> Previous</span>
         </button>
     </div>
-    <div class="center">1,2,3,4,5</div>
+    <div class="center">
+        <div class="pages">
+            <ng-container *ngFor="let page of users;let i = index">
+                <div class="page" *ngIf="i%10==0" [ngClass]="(i/10)+1 == currentSlide ? 'selected' : ''" (click)="togglePage((i/10)+1)">
+                    {{(i/10)+1}}
+                </div>
+            </ng-container>
+        </div>
+    </div>
     <div class="right">
+        <div class="userCount">
+            Showing {{((currentSlide-1)*10) + 1}} - {{currentSlide*10}} of {{users.length}} users
+        </div>
         <button [disabled]="currentSlide>9" (click)="changeSlide('next')">
             <span> Next</span>
-            <img src="https://cdn-icons-png.flaticon.com/512/109/109617.png">
+            <img [src]="currentSlide>9 ? 'https://cdn-icons-png.flaticon.com/512/109/109617.png' : 'https://www.nicepng.com/png/full/9-97633_right-arrow-white-png-right-arrow-png-white.png'">
         </button>
     </div>
 </div>
