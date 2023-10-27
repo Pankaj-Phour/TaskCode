@@ -141,7 +141,42 @@
                     color: $darkGreen;
                     border-radius: 20px;
                     padding: 5px 10px;
+                    width: fit-content;
                 }
+                .activeStatus{
+                    background-color: $lightGreen;
+                    color: $darkGreen;
+                }
+                .inactive{
+                    background-color: $lightGray;
+                    color: $darkGray;
+                }
+            }
+        }
+        .footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            button{
+                padding: 10px 20px;
+                border-radius: 10px;
+                border: 1px solid $darkGray;
+                outline: none;
+                background-color: transparent;
+                display: flex;
+                justify-content: space-around;
+                column-gap: 10px;
+                align-items: center;
+                cursor: pointer;
+                img{
+                    width: 20px;
+                    height: auto;
+                }
+            }
+            button:hover{
+                // background-color: $darkPurple;
+                // color: $whiteColor;
             }
         }
     }

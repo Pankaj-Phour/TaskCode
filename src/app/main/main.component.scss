@@ -1,3 +1,4 @@
+@import '../../vars';
 .body{
     height: 100%;
     min-height: 100vh;
@@ -57,12 +58,14 @@
                 }
                 button{
                     padding: 10px;
+                    padding-inline: 20px;
                     border-radius: 10px;
-                    border: 2px solid gray;
+                    border: 1px solid $lightGray;
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
                     background-color: transparent;
+                    column-gap: 5px;
                 }
                 button:hover{
                     cursor: pointer;
@@ -78,7 +81,7 @@
             max-height: 100%;
             height: 100%;
             .barChart, .donutChart{
-                border: 1px solid gray;
+                border: 1px solid $lightGray;
                 border-radius: 10px;
             }
             .barChart{
@@ -89,7 +92,54 @@
                 flex-direction: column;
                 justify-content: space-between;
                 .barCenter{
-                    height: 70%;
+                    height: 60%;
+                }
+                .barBottom,.barTop{
+                    // height: 15%;
+                    display: flex;
+                    width: 100%;
+                    padding: 10px;
+                    padding-inline: 20px;
+                    justify-content: space-between;
+                    align-items: center;
+                    box-sizing: border-box;
+                    .barLeft{
+                        display: flex;
+                        align-items: center;
+                        column-gap: 10px;
+                        .heading{
+                            font-size: 24px;
+                            font-weight: 600;
+                        }
+                        .logo{
+                            width: 50px;
+                            height: 50px;
+                            img{
+                                height: 100%;
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .barRight{
+                        img{
+                            cursor: pointer;
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                    .barButton{
+                        display: flex;
+                        justify-content: flex-end;
+                        width: 100%;
+                        button{
+                            padding: 10px;
+                            padding-inline: 20px;
+                            border-radius: 10px;
+                            border: 1px solid $lightGray;
+                            background-color: transparent;
+                            cursor: pointer;
+                        }
+                    }
                 }
             }
             .donutChart{
@@ -99,12 +149,95 @@
                 height: 100%;
                 flex-direction: column;
                 justify-content: space-between;
+                .donutTop,.donutBottom{
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    padding: 10px;
+                    padding-inline: 20px;
+                    box-sizing: border-box;
+                    .donutLeft{
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 5px;
+                        .heading{
+                            font-size: 18px;
+                            font-weight: 500;
+                        }
+                        .para{
+                            font-size: 13px;
+                            color: $darkGray;
+                        }
+                    }
+                    .donutRight{
+                        img{
+                            height: 20px;
+                            width: 20px;
+                            cursor: pointer;
+                        }
+                    }
+                    .topText{
+                        display: flex;
+                        flex-direction: column;
+                        row-gap: 5px;
+                        .heading{
+                            font-size: 18px;
+                        }
+                        .text{
+                            font-size: 13px;
+                            color: $darkGray;
+                        }
+                    }
+                    .bottomButton{
+                        display: flex;
+                        width: 100%;
+                        justify-content: flex-end;
+                        button{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            column-gap: 10px;
+                            padding: 10px;
+                            padding-inline: 20px;
+                            border-radius: 10px;
+                            border: 1px solid $lightGray;
+                            cursor: pointer;
+                            .logo{
+                                img{
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+                .donutBottom{
+                    flex-direction: column;
+                }
+                .chart{
+                    width: 100%;
+                    display: flex;
+                    .leftCenter{
+                        width: 70%;
+                    }
+                    .rightCenter{
+                        display: flex;
+                        justify-content: center;
+                        width: 30%;
+                        color: $lightGreen;
+                        img{
+                            height: 30px;
+                            width: 30px;
+                        }
+                    }
+                }
             }
         }
     }
     .workflow{
         width: 100%;
-        border: 1px solid gray;
+        border: 1px solid $lightGray;
         border-radius: 10px;
     }
 }

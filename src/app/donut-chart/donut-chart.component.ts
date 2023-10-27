@@ -17,13 +17,23 @@ Highcharts.chart('donutcontainer', {
   chart: {
       plotBackgroundColor: null,
       plotBorderWidth: 0,
-      plotShadow: false
+      plotShadow: false,
+      margin: [0, 0, 0, 0],
+        spacingTop: 0,
+        spacingBottom: 0,
+        spacingLeft: 0,
+        spacingRight: 0,
+        height: '60%',
+        // width: '100%'
+  },
+  credits:{
+    enabled:false
   },
   title: {
-      text: 'Browser<br>shares<br>January<br>2022',
+      text: '240',
       align: 'center',
       verticalAlign: 'middle',
-      y: 60
+      y: 30,
   },
   tooltip: {
       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -35,9 +45,11 @@ Highcharts.chart('donutcontainer', {
   },
   plotOptions: {
       pie: {
+        colors:[
+          'rgb(96, 29, 151)',
+          'rgba(96, 29, 151,0.1)'
+        ],
           dataLabels: {
-              enabled: true,
-              distance: -50,
               style: {
                   fontWeight: 'bold',
                   color: 'white'
@@ -46,16 +58,16 @@ Highcharts.chart('donutcontainer', {
           startAngle: -90,
           endAngle: 90,
           center: ['50%', '75%'],
-          size: '110%'
+          size: '100%',
       }
   },
   series: [{
       type: 'pie',
-      name: 'Vendors',
+      name: 'spots',
       innerSize: '80%',
       data: [
-          ['used', 70],
-          ['available',30]
+          ['used', 80],
+          ['available',20]
       ]
   }]
 });

@@ -8,9 +8,10 @@ import { ApiService } from '../api.service';
 })
 export class WorkflowComponent implements OnInit {
 
-
+currentSlide:number = 1;
+groupCheck:boolean = false;
   users:any = [
-    {checked:'',name:'Pankaj Phour',userId:'@pankaj',status:'active',email:70,role:'Frontend developer',teams:['Angular','Frontend','developers'],options:['edit','delete']}
+    {checked:false,name:'Pankaj Phour',userId:'@pankaj',status:'active',email:70,role:'Frontend developer',teams:['Angular','Frontend','developers'],options:['edit','delete']}
   ]
 
   icons:any = [
@@ -34,5 +35,32 @@ export class WorkflowComponent implements OnInit {
     
   }
 
+
+  changeSlide(type:string){
+    this.groupCheck = false;
+    console.log(type);
+    if(type=='next'){
+      this.currentSlide += 1;
+    }
+    else{
+      this.currentSlide -= 1;
+    }
+    
+  }
+
+  toggleSingle(index:number){
+    this.users[index].checked = !this.users[index].checked;
+  }
+
+  toggleGroup(){
+    this.groupCheck = !this.groupCheck;
+    let length = this.users.length;
+    for(let i=0;i<length;i++){
+      if(i/10<this.currentSlide && i/10>(this.currentSlide-1)){
+        this.users[i].checked = this.groupCheck;
+        
+      }
+    }
+  }
 
 }

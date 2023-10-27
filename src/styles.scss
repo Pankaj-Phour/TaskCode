@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Roboto&display=swap');
+@import './vars';
 
 *{
     box-sizing: border-box;
@@ -10,3 +11,14 @@ body{
     height: 100vh;
     // overflow: hidden;
 }
+
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: $darkPurple; 
+    border-radius: 10px;
+  }
+  

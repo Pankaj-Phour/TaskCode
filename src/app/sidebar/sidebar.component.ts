@@ -16,9 +16,9 @@ topItems:any =[
   {name:'https://www.svgrepo.com/download/35686/layer.svg'},
 ]
 bottomItems:any =[
-  {name:'https://static.thenounproject.com/png/2953569-200.png'},
+  {name:'https://www.svgrepo.com/download/13688/settings.svg'},
   {name:'https://www.iconpacks.net/icons/1/free-pie-chart-icon-660-thumb.png'},
-  {name:'https://www.svgrepo.com/download/35686/layer.svg'},
+  {name:'https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png'},
 ]
   constructor() { }
 
