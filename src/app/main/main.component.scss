@@ -156,10 +156,11 @@
                     padding: 10px;
                     padding-inline: 20px;
                     box-sizing: border-box;
+                    row-gap: 10px;
                     .donutLeft{
                         display: flex;
                         flex-direction: column;
-                        row-gap: 5px;
+                        // row-gap: 5px;
                         .heading{
                             font-size: 18px;
                             font-weight: 500;
@@ -179,7 +180,7 @@
                     .topText{
                         display: flex;
                         flex-direction: column;
-                        row-gap: 5px;
+                        // row-gap: 5px;
                         .heading{
                             font-size: 18px;
                         }
